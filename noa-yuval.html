@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<!-- ============================================================
+  שדה לעריכה - שם השמרטפים (שינוי ערך אחד בלבד, per sitter):
+  שנו את ה-content בשורה למטה, למשל "ליאור" או "נועה ויובל".
+  השאירו ריק כדי להציג ברכה כללית.
+  EDIT ONE VALUE PER SITTER: change content="" below. Empty = generic greeting.
+============================================================ -->
+<meta name="sitter-names" content="נועה ויובל">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>מוקי 🐾 מדריך השמרטפים</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Varela+Round&family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16161d;
+    --sky:#2bb3e8;
+    --sky-deep:#1488c4;
+    --cream:#fdf6e6;
+    --paper:#fffaf0;
+    --gold:#f2b237;
+    --gold-deep:#e08a1e;
+    --red:#ec4250;
+    --orange:#f6952f;
+    --yellow:#ffce33;
+    --green:#43aa8b;
+    --blue:#2b7fd1;
+    --purple:#9b5de5;
+    --shadow:6px 6px 0 var(--ink);
+    --shadow-sm:3px 3px 0 var(--ink);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Assistant',sans-serif;
+    color:var(--ink);
+    background-color:var(--cream);
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(155,93,229,.06), transparent 30%),
+      radial-gradient(circle at 88% 8%, rgba(43,179,232,.10), transparent 32%),
+      radial-gradient(circle at 50% 100%, rgba(242,178,55,.10), transparent 40%);
+    line-height:1.55;
+    overflow-x:hidden;
+    -webkit-tap-highlight-color:transparent;
+  }
+  /* paper grain */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 90px;position:relative;z-index:2}
+
+  /* ---------- HERO ---------- */
+  header.hero{text-align:center;padding:38px 0 10px}
+  .hero-eyebrow{
+    display:inline-block;font-family:'Varela Round';font-size:.95rem;
+    background:var(--ink);color:#fff;padding:5px 16px;border-radius:30px;
+    letter-spacing:.5px;transform:rotate(-2deg);box-shadow:var(--shadow-sm)
+  }
+  .hero h1{
+    font-family:'Suez One';font-size:clamp(3.2rem,16vw,6rem);line-height:.92;
+    margin:14px 0 6px;letter-spacing:-1px;
+    background:linear-gradient(95deg,var(--red),var(--orange) 28%,var(--gold) 48%,var(--green) 68%,var(--blue) 84%,var(--purple));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    filter:drop-shadow(3px 3px 0 var(--ink));
+  }
+  .hero .sub{font-family:'Varela Round';font-size:1.15rem;color:var(--ink);opacity:.85}
+  .paw-row{font-size:1.4rem;letter-spacing:8px;margin:8px 0 0;opacity:.6}
+
+  /* card image */
+  .card-frame{
+    margin:26px auto 6px;max-width:330px;position:relative;
+    transform:rotate(-1.5deg);transition:transform .4s cubic-bezier(.2,.9,.3,1.4)
+  }
+  .card-frame:hover{transform:rotate(0deg) scale(1.02)}
+  .card-frame img{
+    width:100%;display:block;border:5px solid var(--ink);border-radius:14px;
+    box-shadow:var(--shadow);background:#fff
+  }
+  .tape{
+    position:absolute;width:120px;height:34px;background:rgba(255,206,51,.7);
+    border:2px dashed rgba(0,0,0,.25);top:-14px;right:30%;transform:rotate(-6deg);z-index:3
+  }
+  .tape.two{background:rgba(43,179,232,.6);top:auto;bottom:-14px;right:auto;left:28%;transform:rotate(5deg)}
+
+  /* ---------- QUICK BAR ---------- */
+  .quickbar{
+    display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:30px 0 8px
+  }
+  .quickbar a{
+    font-family:'Varela Round';text-decoration:none;color:var(--ink);
+    background:var(--paper);border:3px solid var(--ink);border-radius:30px;
+    padding:9px 16px;font-size:.98rem;box-shadow:var(--shadow-sm);
+    transition:transform .15s, box-shadow .15s;display:flex;align-items:center;gap:6px
+  }
+  .quickbar a:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+  .quickbar a:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+  .quickbar a.call{background:var(--red);color:#fff}
+
+  /* ---------- SECTION ---------- */
+  section{margin-top:46px}
+  .sec-title{
+    font-family:'Suez One';font-size:1.9rem;display:flex;align-items:center;gap:12px;
+    margin-bottom:18px
+  }
+  .sec-title .emoji{
+    font-size:1.6rem;background:var(--paper);border:3px solid var(--ink);
+    width:54px;height:54px;display:grid;place-items:center;border-radius:50%;
+    box-shadow:var(--shadow-sm);flex:none
+  }
+  .sec-title .bar{flex:1;height:5px;border-radius:4px;background:repeating-linear-gradient(
+    90deg,var(--red) 0 14%,var(--orange) 14% 28%,var(--yellow) 28% 42%,
+    var(--green) 42% 56%,var(--blue) 56% 70%,var(--purple) 70% 84%,var(--red) 84% 100%)}
+
+  .card{
+    background:var(--paper);border:4px solid var(--ink);border-radius:16px;
+    padding:18px 20px;box-shadow:var(--shadow);margin-bottom:16px;position:relative
+  }
+  .card h3{font-family:'Varela Round';font-size:1.2rem;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .card p, .card li{font-size:1.05rem}
+  .card ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .card ul li{padding-right:26px;position:relative}
+  .card ul li::before{content:"🐾";position:absolute;right:0;top:1px;font-size:.85rem}
+  .pill{display:inline-block;background:var(--yellow);border:2px solid var(--ink);
+    border-radius:20px;padding:1px 10px;font-family:'Varela Round';font-size:.85rem;margin:0 2px}
+
+  /* ---------- TIMELINE ---------- */
+  .day{
+    background:var(--paper);border:4px solid var(--ink);border-radius:16px;
+    box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;transition:transform .2s
+  }
+  .day.today{box-shadow:6px 6px 0 var(--gold-deep);border-color:var(--gold-deep)}
+  .day-head{
+    display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;
+    background:var(--sky);color:#fff;border-bottom:4px solid var(--ink)
+  }
+  .day.today .day-head{background:var(--gold);color:var(--ink)}
+  .day-head .dn{font-family:'Suez One';font-size:1.3rem;flex:1}
+  .day-head .badge{font-family:'Varela Round';font-size:.78rem;background:#fff;color:var(--ink);
+    border:2px solid var(--ink);border-radius:20px;padding:1px 9px}
+  .day-head .chev{font-size:1.1rem;transition:transform .25s}
+  .day.open .chev{transform:rotate(180deg)}
+  .day-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .day.open .day-body{max-height:600px}
+  .day-body ul{list-style:none;padding:8px 18px 16px}
+  .task{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:2px dotted rgba(0,0,0,.12)}
+  .task:last-child{border-bottom:none}
+  .task input{appearance:none;width:28px;height:28px;flex:none;border:3px solid var(--ink);
+    border-radius:8px;background:#fff;cursor:pointer;position:relative;transition:background .15s}
+  .task input:checked{background:var(--green)}
+  .task input:checked::after{content:"✓";position:absolute;inset:0;color:#fff;font-weight:800;
+    display:grid;place-items:center;font-size:1.1rem}
+  .task label{cursor:pointer;font-size:1.05rem}
+  .task input:checked + label{opacity:.5;text-decoration:line-through}
+  .task .time{font-family:'Varela Round';font-size:.8rem;background:var(--cream);
+    border:2px solid var(--ink);border-radius:20px;padding:0 9px;margin-right:auto;flex:none}
+
+  /* ---------- WIFI ---------- */
+  .wifi{background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;
+    border:4px solid var(--ink);border-radius:16px;padding:20px;box-shadow:var(--shadow);text-align:center}
+  .wifi h3{font-family:'Suez One';font-size:1.5rem;margin-bottom:14px}
+  .wifi-row{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+  .wifi-row .lbl{font-family:'Varela Round';opacity:.9}
+  .wifi-row code{background:rgba(255,255,255,.95);color:var(--ink);font-family:'Varela Round';
+    font-size:1.1rem;padding:5px 14px;border-radius:10px;border:2px solid var(--ink)}
+  .copy{font-family:'Varela Round';background:var(--yellow);color:var(--ink);border:3px solid var(--ink);
+    border-radius:20px;padding:5px 14px;cursor:pointer;box-shadow:var(--shadow-sm);transition:transform .12s}
+  .copy:hover{transform:translateY(-2px)}
+  .copy:active{transform:translateY(2px);box-shadow:1px 1px 0 var(--ink)}
+
+  /* ---------- VET ---------- */
+  .vet{background:var(--red);color:#fff;border:4px solid var(--ink);border-radius:16px;
+    padding:22px 20px;box-shadow:var(--shadow);text-align:center}
+  .vet h3{font-family:'Suez One';font-size:1.5rem;margin-bottom:6px}
+  .vet p{opacity:.95;margin-bottom:16px}
+  .vet .callbtn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+    font-family:'Suez One';font-size:1.5rem;background:#fff;color:var(--red);
+    border:4px solid var(--ink);border-radius:40px;padding:12px 30px;box-shadow:var(--shadow);
+    transition:transform .15s}
+  .vet .callbtn:hover{transform:scale(1.05)}
+  .vet .callbtn:active{transform:scale(.97)}
+  .pulse{display:inline-block;animation:ring 1.6s infinite}
+  @keyframes ring{0%,70%,100%{transform:rotate(0)}10%,30%,50%{transform:rotate(-12deg)}20%,40%,60%{transform:rotate(12deg)}}
+
+  /* address map link */
+  .maplink{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--blue);
+    font-family:'Varela Round';border-bottom:3px solid var(--gold)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.twocol{grid-template-columns:1fr}}
+  .mini{background:var(--paper);border:3px solid var(--ink);border-radius:14px;padding:14px 16px;
+    box-shadow:var(--shadow-sm)}
+  .mini h4{font-family:'Varela Round';font-size:1.05rem;display:flex;align-items:center;gap:7px;margin-bottom:4px}
+  .mini p{font-size:1rem}
+
+  /* exit checklist */
+  .exit{background:var(--green);color:#fff;border:4px solid var(--ink);border-radius:16px;
+    padding:20px;box-shadow:var(--shadow)}
+  .exit h3{font-family:'Suez One';font-size:1.5rem;margin-bottom:12px;text-align:center}
+  .exit .task input{border-color:#fff}
+  .exit .task{border-color:rgba(255,255,255,.3)}
+  .exit .task input:checked{background:#fff}
+  .exit .task input:checked::after{color:var(--green)}
+
+  footer{text-align:center;margin-top:54px}
+  .thanks{font-family:'Suez One';font-size:1.6rem;color:var(--ink);
+    background:var(--yellow);display:inline-block;padding:10px 24px;border:4px solid var(--ink);
+    border-radius:40px;box-shadow:var(--shadow);transform:rotate(-1.5deg)}
+  .sig{font-family:'Varela Round';margin-top:14px;opacity:.7}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s, transform .6s}
+  .reveal.in{opacity:1;transform:none}
+
+  /* toast */
+  #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);
+    background:var(--ink);color:#fff;font-family:'Varela Round';padding:12px 24px;border-radius:30px;
+    z-index:50;transition:transform .35s cubic-bezier(.2,.9,.3,1.4);box-shadow:var(--shadow-sm)}
+  #toast.show{transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="hero-eyebrow">מדריך השמרטפים של מוקי 🐶</span>
+    <h1>מוקי</h1>
+    <p class="sub" id="greeting">כל מה שצריך לדעת 💛</p>
+    <div class="paw-row">🐾 🦴 🐾</div>
+  </header>
+
+  <!-- QUICK BAR -->
+  <nav class="quickbar reveal">
+    <a href="#luz">🗓️ יום רגיל</a>
+    <a href="tel:037710088" class="call">📞 וטרינר 24/7</a>
+    <a href="#mookie">🐕 הוראות מוקי</a>
+  </nav>
+
+  <!-- NORMAL DAY -->
+  <section id="luz">
+    <h2 class="sec-title reveal"><span class="emoji">🗓️</span> איך נראה יום רגיל <span class="bar"></span></h2>
+    <p class="reveal" style="margin:-6px 0 16px;opacity:.75">שני טיולים ביום, בבוקר ובערב, ופיפי קצר לפני השינה. בלילה הוא מחזיק 10-11 שעות. אם הוא התעייף בחוץ אפשר לקצר טיול.</p>
+
+    <div class="day open reveal">
+      <div class="day-head"><span>☀️</span><span class="dn">יום רגיל</span><span class="badge">סימנו ✓ אם בא לכם</span><span class="chev">▾</span></div>
+      <div class="day-body"><ul>
+        <li class="task"><input type="checkbox" id="d1"><label for="d1">בוקר: טיול - פיפי, קקי + הליכה</label><span class="time">30 ד'</span></li>
+        <li class="task"><input type="checkbox" id="d2"><label for="d2">ארוחת בוקר - 200 גרם</label></li>
+        <li class="task"><input type="checkbox" id="d3"><label for="d3">ערב: טיול - פיפי, קקי + הליכה</label><span class="time">30 ד'</span></li>
+        <li class="task"><input type="checkbox" id="d4"><label for="d4">ארוחת ערב - 200 גרם</label></li>
+        <li class="task"><input type="checkbox" id="d5"><label for="d5">פיפי קצר לפני השינה</label><span class="time">5 ד'</span></li>
+      </ul></div>
+    </div>
+  </section>
+
+  <!-- VET -->
+  <section id="vet">
+    <div class="vet reveal">
+      <h3><span class="pulse">📞</span> וטרינר 24/7 (חירום)</h3>
+      <p>דנית-וט, 03-771-0088 - מענה 24/7 במקרי חירום. יש מנוי וביטוח.</p>
+      <a href="tel:037710088" class="callbtn">📞 03-771-0088</a>
+    </div>
+
+    <div class="card reveal" style="margin-top:16px">
+      <h3>🎓 מאלף</h3>
+      <p>מאלף: אלמוג מנשה, 052-4044082 - לשאלות התנהגות כשיונתן לא זמין</p>
+      <a href="tel:+972524044082" style="display:inline-flex;margin-top:10px;text-decoration:none;color:var(--ink);background:var(--yellow);border:3px solid var(--ink);border-radius:999px;padding:8px 20px;font-weight:800;box-shadow:var(--shadow-sm)">📞 052-4044082</a>
+    </div>
+  </section>
+
+  <!-- MOOKIE INSTRUCTIONS -->
+  <section id="mookie">
+    <h2 class="sec-title reveal"><span class="emoji">🐕</span> הוראות מוקי <span class="bar"></span></h2>
+
+    <div class="card reveal">
+      <h3>⏱️ זמן לבד</h3>
+      <ul>
+        <li>יכול לשהות לבד <span class="pill">עד 6 שעות</span> בכלוב, עם מים.</li>
+        <li>בלילה מחזיק <span class="pill">10-11 שעות</span> בלי פיפי.</li>
+      </ul>
+    </div>
+
+    <div class="card reveal">
+      <h3>🐾 מפגשים עם כלבים ואנשים</h3>
+      <ul>
+        <li>אוהב את כולם! אפשר להיפגש עם מי שתרצו. 💛</li>
+        <li>גינת כלבים - אם יש <span class="pill">מעל 3 כלבים</span> עדיף להימנע (אלא אם כולם גולדנים חמודים אוהבי אדם, שלום וחופש 🌈).</li>
+      </ul>
+    </div>
+
+    <div class="card reveal">
+      <h3>🚶 טיולים</h3>
+      <ul>
+        <li>ירצה לגשת לכל אדם וכלב שיראה - לתת לו או למשוך, הבחירה שלכם.</li>
+        <li>בחום: לטייל באזורים מוצלים ולתת מים. 💧</li>
+        <li>הוא שואב אבק 🧹 - לשים לב שלא אוכל שטויות מהרצפה ולעצור אותו. אם קרה - לא נורא, קורה מלאאא.</li>
+      </ul>
+    </div>
+
+    <div class="card reveal">
+      <h3>🍽️ האכלה</h3>
+      <ul>
+        <li><span class="pill">פעמיים ביום</span> · <span class="pill">200 גרם</span> כל פעם.</li>
+        <li>לא צריך אוכל אחר. לפינוק: מלפפון 🥒, אבטיח 🍉, קצת בננה 🍌.</li>
+      </ul>
+    </div>
+
+    <div class="card reveal">
+      <h3>🏰 כלוב</h3>
+      <ul>
+        <li>מוקי אוהב את הכלוב ולפעמים הולך אליו לבד.</li>
+        <li>כשמשאירים אותו לבד - עדיף בכלוב, לוודא שיש מים. 💧</li>
+        <li>אומרים לו <span class="pill">"למקום"</span> (בביטחון וקצת בזעם) והוא הולך כמו טאטל'ה.</li>
+        <li>אפשר להשאיר נעול גם כשאתם בבית - סבבה לגמרי.</li>
+      </ul>
+    </div>
+
+    <div class="card reveal">
+      <h3>🎒 ציוד</h3>
+      <p>מגיע איתו: הרצועות שלו + תיק פאוץ' עם קצת אוכל ושקיות קקי.</p>
+    </div>
+  </section>
+
+  <!-- EXIT -->
+  <section id="exit">
+    <h2 class="sec-title reveal"><span class="emoji">👋</span> לפני שיוצאים <span class="bar"></span></h2>
+    <div class="exit reveal">
+      <h3>משאירים את מוקי לבד?</h3>
+      <ul style="list-style:none">
+        <li class="task"><input type="checkbox" id="ex1"><label for="ex1">להשאיר למוקי מאוורר או מזגן על המתוק 🐶❄️</label></li>
+        <li class="task"><input type="checkbox" id="ex2"><label for="ex2">לוודא שיש לו מים 💧</label></li>
+        <li class="task"><input type="checkbox" id="ex3"><label for="ex3">שאין שום דבר אכיל על הרצפה 🧹</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="thanks reveal">תודה ענקית!! 🐾💛🌈</div>
+    <p class="sig reveal">- החברים ומוקי מודים לכם 🐕</p>
+  </footer>
+
+</div>
+
+<div id="toast">הועתק! 📋</div>
+
+<script>
+  // ---- sitter name (set in <meta name="sitter-names"> at top of file) ----
+  const sn=(document.querySelector('meta[name=sitter-names]')||{}).content||'';
+  if(sn.trim()) document.getElementById('greeting').textContent='היי '+sn.trim()+'! כל מה שצריך לדעת 💛';
+
+  // ---- persist checkboxes ----
+  document.querySelectorAll('input[type=checkbox]').forEach(cb=>{
+    const k='mookie_'+cb.id;
+    if(localStorage.getItem(k)==='1') cb.checked=true;
+    cb.addEventListener('change',()=>localStorage.setItem(k, cb.checked?'1':'0'));
+  });
+
+  // ---- accordion ----
+  document.querySelectorAll('.day').forEach(d=>{
+    d.querySelector('.day-head').addEventListener('click',()=>d.classList.toggle('open'));
+  });
+
+  // ---- toast ----
+  const toast=document.getElementById('toast');
+
+  // ---- reveal on scroll ----
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el);});
+</script>
+</body>
+</html>
