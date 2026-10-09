@@ -212,3 +212,11 @@
   .wifi figure img{width:100%;display:block;border:4px solid var(--ink);border-radius:12px;background:#fff}
   .wifi figcaption{font-family:'Varela Round';margin-top:6px}
   .todo{border-style:dashed;opacity:.7}
+
+  /* phone actions (shared/secrets.js, items with "tel") */
+  .contact-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:-2px 0 12px}
+  .contact-actions a.copy{text-decoration:none;display:inline-block}
+  .contact-card{margin-top:22px;text-align:center}
+  .contact-card #contact{margin-top:10px}
+  .contact-number{font-family:'Varela Round';font-size:1.25rem;margin-bottom:10px}
+  .contact-card .contact-actions{margin:0}

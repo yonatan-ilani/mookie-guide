@@ -1,7 +1,7 @@
 // Decrypts <guide>/secrets.enc with the key from the link's #k=... fragment and renders it
 // into #secrets. Without a valid key the block shows a "ask for the full link" note instead.
 // Format (see scripts/encrypt-secrets.py): base64(nonce[12] + AES-256-GCM ciphertext) of
-// {"items":[{icon,label,value,copy?}], "images":[{caption,src}]}.
+// {"items":[{icon,label,value,copy?,tel?}], "images":[{caption,src}]}.
 (function () {
   const box = document.getElementById('secrets');
   if (!box) return;
@@ -18,6 +18,24 @@
     t.textContent = msg;
     t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 1600);
+  }
+
+  // "tel" is an international number without "+", e.g. 972501234567
+  function actionButtons(it) {
+    const wrap = document.createElement('div');
+    wrap.className = 'contact-actions';
+    const call = document.createElement('a');
+    call.className = 'copy';
+    call.href = 'tel:+' + it.tel;
+    call.textContent = '📞 חיוג';
+    const wa = document.createElement('a');
+    wa.className = 'copy';
+    wa.href = 'https://wa.me/' + it.tel;
+    wa.target = '_blank';
+    wa.rel = 'noopener';
+    wa.textContent = '💬 וואטסאפ';
+    wrap.append(call, wa);
+    return wrap;
   }
 
   function render(data) {
@@ -41,6 +59,16 @@
         row.append(btn);
       }
       list.append(row);
+      if (it.tel) {
+        list.append(actionButtons(it));
+        const slot = document.getElementById('contact');
+        if (slot) {
+          const line = document.createElement('p');
+          line.className = 'contact-number';
+          line.textContent = it.value;
+          slot.replaceChildren(line, actionButtons(it));
+        }
+      }
     });
     (data.images || []).forEach((im) => {
       const fig = document.createElement('figure');

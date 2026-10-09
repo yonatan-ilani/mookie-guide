@@ -30,7 +30,7 @@ Read the repo's `CLAUDE.md` first (layout, shared style, publishing rules).
   }
   ```
   Write it in the session scratchpad (never in the repo), from what the user sends.
-  `copy: true` adds a copy button. Photos are resized and stripped of EXIF/GPS by the script.
+  `copy: true` adds a copy button. `"tel": "9725XXXXXXXX"` (international, no `+`) adds call and WhatsApp buttons, also in the footer `#contact` slot. Write `value` in local format (`050-...`). Photos are resized and stripped of EXIF/GPS by the script.
 - Encrypt and get the link:
   ```bash
   scripts/encrypt-secrets.py home <scratchpad>/home-secrets.json              # new key
