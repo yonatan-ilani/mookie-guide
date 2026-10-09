@@ -33,11 +33,16 @@ Check with `diff index.html SLUG.html` — only line 11 may differ.
 ## 3. Write the Gemini prompt
 
 The picture is a **thank-you poster** in a fixed style: the first one was made for the hosts
-Max & Nery. The user keeps that poster and attaches it to Gemini as the layout template — it
-is not in this repo. The prompt asks Gemini to recreate it for the new sitter.
+Max & Nery. It lives in this repo at `assets/poster-template.jpg` and is public at
+https://yonatan-ilani.github.io/mookie-guide/assets/poster-template.jpg (the repo and its
+GitHub Pages site are public; the user approved publishing it). The prompt asks Gemini to
+recreate it for the new sitter.
 
-Tell the user to attach, in this order:
-1. The original Max & Nery poster (template).
+Put the poster URL in the prompt. If Gemini's result doesn't follow the layout (it may not
+open the link), tell the user to download the poster from that URL and attach it instead.
+
+Tell the user to attach:
+1. Only if the link didn't work: the poster itself (template).
 2. A photo of each sitter.
 3. Optional: a Google Street View screenshot of the sitter's building, so Gemini doesn't
    invent one.
@@ -46,7 +51,9 @@ Do not invent details about the sitters' looks or identity. Drop the pride flag 
 "GAY-FRIENDLY & WELCOMING HOUSE!" sign unless the user says they fit the new sitters.
 
 ```text
-Recreate the attached poster (image 1) as a new version for a different dog-sitter.
+Recreate this poster as a new version for a different dog-sitter:
+https://yonatan-ilani.github.io/mookie-guide/assets/poster-template.jpg
+(If the poster is also attached, use the attached copy.)
 Keep exactly the same layout, cartoon style, colors and composition:
 - Big rainbow-striped bubble-letter title at the top.
 - Round photo bubble(s) of the sitter(s) at the top, with a ribbon banner "YOU'RE OUR SUPERSTAR{S}!".
@@ -59,7 +66,7 @@ Keep exactly the same layout, cartoon style, colors and composition:
 
 Changes:
 - Title: "{NAMES IN ENGLISH, e.g. LIOR!}" instead of "MAX & NERY!".
-- People: use only the person/people in the attached sitter photo(s) {image 2[, 3]};
+- People: use only the person/people in the attached sitter photo(s);
   remove both people from the original poster.
 - The building is {NAMES}'s home in {CITY}
   (base it on the attached building photo if there is one; otherwise {SHORT DESCRIPTION,
