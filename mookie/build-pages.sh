@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Rebuild every sitter page from index.html.
+# Rebuild every Mookie sitter page from mookie/index.html.
 # Each line in SITTERS: slug|names shown in the greeting|poster path (empty = no poster)
 set -euo pipefail
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")"
 
 SITTERS=(
   "lior|ליאור|assets/lior-poster.jpg"

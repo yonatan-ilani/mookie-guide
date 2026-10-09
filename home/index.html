@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<!-- ============================================================
+  Guest name (optional): set content="" below, e.g. "דנה". Empty = generic greeting.
+  Secrets (Wi-Fi, codes, keys photo) are NOT in this file: they live encrypted in
+  secrets.enc and open only with the #k=... link. See scripts/encrypt-secrets.py.
+============================================================ -->
+<meta name="guest-names" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>ברוכים הבאים 🏠 מדריך הבית</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Varela+Round&family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/guide.css">
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="hero-eyebrow">מדריך הבית 🏠</span>
+    <h1>ברוכים הבאים</h1>
+    <p class="sub" id="greeting">כל מה שצריך כדי להרגיש בבית 💛</p>
+    <div class="paw-row">🔑 ☕ 🛋️</div>
+  </header>
+
+  <!-- QUICK BAR -->
+  <nav class="quickbar reveal">
+    <a href="#secrets">🔒 וויפי ומפתחות</a>
+    <a href="#in">🚪 כניסה</a>
+    <a href="#house">🏠 הבית</a>
+    <a href="#exit">👋 לפני שיוצאים</a>
+  </nav>
+
+  <!-- SECRETS (filled by shared/secrets.js from secrets.enc) -->
+  <section id="secrets-sec">
+    <h2 class="sec-title reveal"><span class="emoji">🔒</span> וויפי ומפתחות <span class="bar"></span></h2>
+    <div class="wifi reveal" id="secrets">
+      <h3>📶 הפרטים הסודיים</h3>
+      <div class="locked"><p>הפרטים האלה נפתחים רק מהקישור המלא שקיבלתם מיונתן 🔑</p></div>
+      <div class="secret-items"></div>
+      <div class="secret-images"></div>
+    </div>
+  </section>
+
+  <!-- GETTING IN -->
+  <section id="in">
+    <h2 class="sec-title reveal"><span class="emoji">🚪</span> איך נכנסים <span class="bar"></span></h2>
+    <div class="card reveal todo">
+      <h3>📍 הגעה</h3>
+      <p>[למלא: איך מגיעים לבניין, קומה, איזו דלת. בלי כתובת מלאה - היא נשלחת בהודעה.]</p>
+    </div>
+    <div class="card reveal todo">
+      <h3>🔑 מפתחות ודלת</h3>
+      <p>[למלא: איך פותחים ונועלים, טריקים של המנעול. איפה המפתח - בתמונה הסודית למעלה.]</p>
+    </div>
+  </section>
+
+  <!-- THE HOUSE -->
+  <section id="house">
+    <h2 class="sec-title reveal"><span class="emoji">🏠</span> הבית <span class="bar"></span></h2>
+    <div class="twocol">
+      <div class="mini reveal todo"><h4>❄️ מזגן</h4><p>[למלא]</p></div>
+      <div class="mini reveal todo"><h4>🚿 מקלחת ודוד</h4><p>[למלא]</p></div>
+      <div class="mini reveal todo"><h4>☕ מטבח וקפה</h4><p>[למלא]</p></div>
+      <div class="mini reveal todo"><h4>🗑️ זבל ומיחזור</h4><p>[למלא]</p></div>
+      <div class="mini reveal todo"><h4>🛏️ מצעים ומגבות</h4><p>[למלא]</p></div>
+      <div class="mini reveal todo"><h4>📺 טלוויזיה</h4><p>[למלא]</p></div>
+    </div>
+    <div class="card reveal todo" style="margin-top:16px">
+      <h3>🙏 כמה בקשות קטנות</h3>
+      <ul><li>[למלא: חוקי הבית]</li></ul>
+    </div>
+  </section>
+
+  <!-- AROUND -->
+  <section id="around">
+    <h2 class="sec-title reveal"><span class="emoji">🗺️</span> מסביב <span class="bar"></span></h2>
+    <div class="card reveal todo">
+      <h3>⭐ המלצות בשכונה</h3>
+      <ul><li>[למלא: סופר, קפה, אוכל, ים/פארק]</li></ul>
+    </div>
+  </section>
+
+  <!-- EMERGENCY -->
+  <section id="help">
+    <div class="vet reveal">
+      <h3>📞 משהו לא עובד?</h3>
+      <p>כותבים ליונתן, ואם זה דחוף - מתקשרים.</p>
+    </div>
+  </section>
+
+  <!-- EXIT -->
+  <section id="exit">
+    <h2 class="sec-title reveal"><span class="emoji">👋</span> לפני שיוצאים <span class="bar"></span></h2>
+    <div class="exit reveal">
+      <h3>יוצאים מהבית?</h3>
+      <ul style="list-style:none">
+        <li class="task"><input type="checkbox" id="ex1"><label for="ex1">מזגן ואורות כבויים 💡</label></li>
+        <li class="task"><input type="checkbox" id="ex2"><label for="ex2">חלונות סגורים 🪟</label></li>
+        <li class="task"><input type="checkbox" id="ex3"><label for="ex3">נעלתם את הדלת 🔑</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="thanks reveal">תהנו!! 🏠💛</div>
+    <p class="sig reveal">- יונתן</p>
+  </footer>
+
+</div>
+
+<div id="toast">הועתק! 📋</div>
+
+<script src="../shared/secrets.js"></script>
+<script>
+  const gn=(document.querySelector('meta[name=guest-names]')||{}).content||'';
+  if(gn.trim()) document.getElementById('greeting').textContent='היי '+gn.trim()+'! כל מה שצריך כדי להרגיש בבית 💛';
+
+  document.querySelectorAll('input[type=checkbox]').forEach(cb=>{
+    const k='home_'+cb.id;
+    try{ if(localStorage.getItem(k)==='1') cb.checked=true; }catch(e){}
+    cb.addEventListener('change',()=>{ try{ localStorage.setItem(k, cb.checked?'1':'0'); }catch(e){} });
+  });
+
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el);});
+</script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+# Private secrets inputs never belong in the repo (see scripts/encrypt-secrets.py)
+*secrets*.json

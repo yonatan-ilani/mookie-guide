@@ -13,17 +13,21 @@ sitter must fit their home and area.
 
 - Repo: `yonatan-ilani/mookie-guide` (public). Commit straight to `main`; the user approved
   this workflow.
+- The repo holds several guides, one folder each (see the repo's `CLAUDE.md`). This guide
+  lives in `mookie/`; its look comes from `shared/guide.css`, shared with the other guides.
 - Live site (GitHub Pages, about a minute after a push):
-  `https://yonatan-ilani.github.io/mookie-guide/<slug>.html`. `index.html` is the generic page.
-- `assets/`: `poster-template.jpg` (the Max & Nery poster) and `<slug>-poster.jpg` per sitter.
+  `https://yonatan-ilani.github.io/mookie-guide/mookie/<slug>.html`. `mookie/index.html` is
+  the generic page. The old root links (`/lior.html`, `/noa-yuval.html`, `/`) are redirect
+  stubs — keep them, Lior's link was already shared.
+- `mookie/assets/`: `poster-template.jpg` (the Max & Nery poster) and `<slug>-poster.jpg`.
 - Pages are plain HTML/CSS/JS in Hebrew (RTL), no build tools.
 - Never commit a sitter's street address into the repo (prompts given to the user may contain
   it; the repo may not). Photos and posters are fine — the user approved them.
 
 ## 1. Editing the guide's content
 
-Edit **only `index.html`**, then run `scripts/build-pages.sh`. It rebuilds every sitter page
-from `index.html` and fails if a page differs in more than its two meta lines. Never edit
+Edit **only `mookie/index.html`**, then run `mookie/build-pages.sh`. It rebuilds every sitter page
+from `mookie/index.html` and fails if a page differs in more than its two meta lines. Never edit
 `<slug>.html` by hand.
 
 Write like the existing page: short Hebrew lines, warm and a bit cheeky, emojis, `pill`
@@ -57,7 +61,7 @@ What the guide says now (the user's decisions — keep them unless the user chan
 
 ### Check before you push
 
-1. `scripts/build-pages.sh` passes.
+1. `mookie/build-pages.sh` passes.
 2. Render a sitter page in headless Chromium at 390px width (Playwright is preinstalled;
    import it from `$(npm root -g)/playwright/index.mjs`). Add class `in` to every `.reveal`
    before the screenshot, check for no page errors and `scrollWidth == 390`, and look at the
@@ -70,9 +74,9 @@ Ask only for what is missing: names as they appear in the greeting (e.g. `ליא
 `נועה ויובל`), street address and city (for the poster prompt only), and a photo of each
 sitter (for the poster).
 
-Add a row to `SITTERS` in `scripts/build-pages.sh`: `slug|names|` (empty poster for now).
+Add a row to `SITTERS` in `mookie/build-pages.sh`: `slug|names|` (empty poster for now).
 `slug` is a lowercase Latin transliteration joined by `-` (`noa-yuval`). Run the script,
-push, verify, and give the user `https://yonatan-ilani.github.io/mookie-guide/<slug>.html`.
+push, verify, and give the user `https://yonatan-ilani.github.io/mookie-guide/mookie/<slug>.html`.
 
 ## 3. Sitter photos go up as public links
 
@@ -80,27 +84,27 @@ Gemini works best when every image is a link in the prompt. The user has approve
 sitter photos; don't ask again.
 
 1. Crop black screenshot bars, strip all metadata (EXIF/GPS) by re-encoding the pixels, and
-   save it as `assets/<slug>.jpg` (two sitters: `assets/<slug>-<name>.jpg`). Uploads are under
+   save it as `mookie/assets/<slug>.jpg` (two sitters: `mookie/assets/<slug>-<name>.jpg`). Uploads are under
    `~/.claude/uploads/`.
-2. Commit, push, then poll `https://yonatan-ilani.github.io/mookie-guide/assets/<file>.jpg`
+2. Commit, push, then poll `https://yonatan-ilani.github.io/mookie-guide/mookie/assets/<file>.jpg`
    until it returns 200. Do not give the user a prompt until every link returns 200.
 
 If a permission or safety check refuses to publish a photo, do not work around it. Give the
-user the upload steps: open `https://github.com/yonatan-ilani/mookie-guide/upload/main/assets`,
+user the upload steps: open `https://github.com/yonatan-ilani/mookie-guide/upload/main/mookie/assets`,
 drag in the photo named exactly `<file>.jpg`, commit. Then poll the link and confirm it opens.
 
 ## 4. Adding the finished poster to the page
 
 When the user sends the poster Gemini made: strip its metadata, save it as
-`assets/<slug>-poster.jpg`, set that path in the sitter's `SITTERS` row, run the script and
+`mookie/assets/<slug>-poster.jpg`, set `assets/<slug>-poster.jpg` in the sitter's `SITTERS` row, run the script and
 push. The page shows it as the taped card under the greeting (the `sitter-poster` meta tag).
 Poll the page and the image until both return 200.
 
 ## 5. Thank-you poster (Gemini prompt)
 
 The picture is a **thank-you poster** in a fixed style: the first one was made for the hosts
-Max & Nery. It lives in this repo at `assets/poster-template.jpg` and is public at
-https://yonatan-ilani.github.io/mookie-guide/assets/poster-template.jpg (the repo and its
+Max & Nery. It lives in this repo at `mookie/assets/poster-template.jpg` and is public at
+https://yonatan-ilani.github.io/mookie-guide/mookie/assets/poster-template.jpg (the repo and its
 GitHub Pages site are public; the user approved publishing it). The prompt asks Gemini to
 recreate it for the new sitter.
 
@@ -118,7 +122,7 @@ Do not invent details about the sitters' looks or identity. Drop the pride flag 
 
 ```text
 Recreate this poster as a new version for a different dog-sitter:
-https://yonatan-ilani.github.io/mookie-guide/assets/poster-template.jpg
+https://yonatan-ilani.github.io/mookie-guide/mookie/assets/poster-template.jpg
 (If the poster is also attached, use the attached copy.)
 Keep exactly the same layout, cartoon style, colors and composition:
 - Big rainbow-striped bubble-letter title at the top.

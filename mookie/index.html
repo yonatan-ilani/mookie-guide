@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<!-- ============================================================
+  שדה לעריכה - שם השמרטפים (שינוי ערך אחד בלבד, per sitter):
+  שנו את ה-content בשורה למטה, למשל "ליאור" או "נועה ויובל".
+  השאירו ריק כדי להציג ברכה כללית.
+  EDIT ONE VALUE PER SITTER: change content="" below. Empty = generic greeting.
+============================================================ -->
+<meta name="sitter-names" content="">
+<!-- Optional thank-you poster for this sitter, e.g. "assets/lior-poster.jpg". Empty = no poster. -->
+<meta name="sitter-poster" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>מוקי 🐾 מדריך השמרטפים</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Varela+Round&family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/guide.css">
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="hero-eyebrow">מדריך השמרטפים של מוקי 🐶</span>
+    <h1>מוקי</h1>
+    <p class="sub" id="greeting">כל מה שצריך לדעת 💛</p>
+    <div class="paw-row">🐾 🦴 🐾</div>
+    <div class="card-frame" id="poster" hidden>
+      <span class="tape"></span>
+      <img alt="">
+      <span class="tape two"></span>
+    </div>
+  </header>
+
+  <!-- QUICK BAR -->
+  <nav class="quickbar reveal">
+    <a href="#luz">🗓️ יום רגיל</a>
+    <a href="tel:037710088" class="call">📞 וטרינר 24/7</a>
+    <a href="#mookie">🐕 הוראות מוקי</a>
+    <a href="#alone">🏠 לבד בבית</a>
+    <a href="#collar">🔕 קולר נביחות</a>
+  </nav>
+
+  <!-- NORMAL DAY -->
+  <section id="luz">
+    <h2 class="sec-title reveal"><span class="emoji">🗓️</span> איך נראה יום רגיל <span class="bar"></span></h2>
+    <p class="reveal" style="margin:-6px 0 16px;opacity:.75">שני טיולים ביום, בבוקר ובערב, ופיפי קצר לפני השינה. כל טיול לפחות חצי שעה, מומלץ שעה, והמקסימום הוא האינסוף ♾️. בלילה הוא מחזיק 10-11 שעות.</p>
+
+    <div class="day open reveal">
+      <div class="day-head"><span>☀️</span><span class="dn">יום רגיל</span><span class="badge">סימנו ✓ אם בא לכם</span><span class="chev">▾</span></div>
+      <div class="day-body"><ul>
+        <li class="task"><input type="checkbox" id="d1"><label for="d1">בוקר: טיול - פיפי, קקי + הליכה</label><span class="time">30-60 ד'</span></li>
+        <li class="task"><input type="checkbox" id="d2"><label for="d2">ארוחת בוקר - 200 גרם</label></li>
+        <li class="task"><input type="checkbox" id="d3"><label for="d3">ערב: טיול - פיפי, קקי + הליכה</label><span class="time">30-60 ד'</span></li>
+        <li class="task"><input type="checkbox" id="d4"><label for="d4">ארוחת ערב - 200 גרם</label></li>
+        <li class="task"><input type="checkbox" id="d5"><label for="d5">פיפי קצר לפני השינה</label><span class="time">5 ד'</span></li>
+      </ul></div>
+    </div>
+
+    <div class="card reveal">
+      <h3>⏰ אין זמן לטיול ארוך?</h3>
+      <p>אם אין זמן לסיבוב בבוקר או בערב - סיבוב פיפי-קקי קצר, ואז לתת לו משהו להתעסק בו:</p>
+      <ul>
+        <li>חמאת בוטנים או קוטג' על <span class="pill">משטח הליקוק הירוק</span></li>
+        <li>או אוכל בתוך <span class="pill">הקונג האדום</span> (זה שנראה קצת כמו נחום תקום 😄)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- VET -->
+  <section id="vet">
+    <div class="vet reveal">
+      <h3><span class="pulse">📞</span> וטרינר 24/7 (חירום)</h3>
+      <p>דנית-וט, 03-771-0088 - מענה 24/7 במקרי חירום. יש מנוי וביטוח.</p>
+      <a href="tel:037710088" class="callbtn">📞 03-771-0088</a>
+    </div>
+
+    <div class="card reveal" style="margin-top:16px">
+      <h3>🎓 מאלף</h3>
+      <p>מאלף: אלמוג מנשה, 052-4044082 - לשאלות התנהגות כשיונתן לא זמין</p>
+      <a href="tel:+972524044082" style="display:inline-flex;margin-top:10px;text-decoration:none;color:var(--ink);background:var(--yellow);border:3px solid var(--ink);border-radius:999px;padding:8px 20px;font-weight:800;box-shadow:var(--shadow-sm)">📞 052-4044082</a>
+    </div>
+  </section>
+
+  <!-- MOOKIE INSTRUCTIONS -->
+  <section id="mookie">
+    <h2 class="sec-title reveal"><span class="emoji">🐕</span> הוראות מוקי <span class="bar"></span></h2>
+
+    <div class="card reveal">
+      <h3>🐾 מפגשים עם כלבים ואנשים</h3>
+      <ul>
+        <li>אוהב את כולם! אפשר להיפגש עם מי שתרצו. 💛</li>
+        <li>גינת כלבים - אם יש <span class="pill">מעל 3 כלבים</span> עדיף להימנע (אלא אם כולם גולדנים חמודים אוהבי אדם, שלום וחופש 🌈).</li>
+      </ul>
+    </div>
+
+    <div class="card reveal">
+      <h3>💬 משפטים מומלצים כשפוגשים כלבים</h3>
+      <ul>
+        <li>"איך הוא/היא עם גורים?"</li>
+        <li>כשכלב אחר מנסה לעלות עליו: "אם הוא חודר אליו, אני חודר אלייך."</li>
+        <li>"הוא מעדיף לשחק רק עם כלבים שעלו מעל 8K."</li>
+      </ul>
+    </div>
+
+    <div class="card reveal">
+      <h3>🚶 טיולים</h3>
+      <ul>
+        <li>כל טיול <span class="pill">לפחות חצי שעה</span>, מומלץ <span class="pill">שעה</span>. המקסימום? האינסוף ♾️</li>
+        <li>מומלץ לטייל <span class="pill">עם שני קולרים</span>: קולר דוקרנים וקולר רגיל. רוצים שישחק עם כלבים? מעבירים את הרצועה לקולר הרגיל.</li>
+        <li>מומלץ מאוד ללכת עם הרצועה על <span class="pill">קולר הדוקרנים</span> - אחרת הוא ממש מושך. אבל לבחירתכם.</li>
+        <li>ירצה לגשת לכל אדם וכלב שיראה - לתת לו או למשוך, הבחירה שלכם.</li>
+        <li>בחום: לטייל באזורים מוצלים ולתת מים. 💧</li>
+        <li>הוא שואב אבק 🧹 - לשים לב שלא אוכל שטויות מהרצפה ולעצור אותו. אם קרה - לא נורא, קורה מלאאא.</li>
+        <li>לוקחים לים? 🌊 לייבש אותו טוב לפני שחוזרים הביתה - המגבת שלו מצורפת.</li>
+      </ul>
+    </div>
+
+    <div class="card reveal">
+      <h3>🍽️ האכלה</h3>
+      <ul>
+        <li><span class="pill">פעמיים ביום</span> · <span class="pill">200 גרם</span> כל פעם.</li>
+        <li>לא צריך אוכל אחר. לפינוק: מלפפון 🥒, אבטיח 🍉, קצת בננה 🍌.</li>
+      </ul>
+    </div>
+
+    <div class="card reveal">
+      <h3>🛏️ מיטה</h3>
+      <ul>
+        <li>אומרים לו <span class="pill">"למקום"</span> (בביטחון וקצת בזעם) והוא הולך למיטה שלו כמו טאטל'ה.</li>
+        <li>אפשר לשלוח אותו למקום גם כשאתם בבית - סבבה לגמרי.</li>
+      </ul>
+    </div>
+
+    <div class="card reveal">
+      <h3>🎒 ציוד</h3>
+      <p>מגיע איתו: הרצועות שלו, קולר דוקרנים וקולר רגיל, תיק פאוץ' עם קצת אוכל ושקיות קקי, המגבת שלו, הקונג האדום, משטח הליקוק הירוק וקולר הנביחות.</p>
+    </div>
+  </section>
+
+  <!-- HOME ALONE -->
+  <section id="alone">
+    <h2 class="sec-title reveal"><span class="emoji">🏠</span> לבד בבית <span class="bar"></span></h2>
+
+    <div class="card reveal">
+      <h3>⏱️ לכמה זמן</h3>
+      <ul>
+        <li>יכול להישאר לבד <span class="pill">עד 8 שעות</span>.</li>
+        <li>בלילה מחזיק <span class="pill">10-11 שעות</span> בלי פיפי.</li>
+        <li>עדיף לצאת אחרי טיול - כלב עייף הוא כלב רגוע. 😴</li>
+      </ul>
+    </div>
+
+    <div class="twocol">
+      <div class="mini reveal">
+        <h4>✅ מה כן להשאיר</h4>
+        <p>מים 💧 · מאוורר או מזגן ❄️ · קונג עם אוכל או משטח ליקוק · קולר הנביחות על הצוואר</p>
+      </div>
+      <div class="mini reveal">
+        <h4>🚫 מה לא להשאיר</h4>
+        <p>שום דבר אכיל על הרצפה או בהישג יד (אוכל, פח פתוח, נעליים וכו') - הוא שואב אבק 🧹</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTI-BARK COLLAR -->
+  <section id="collar">
+    <h2 class="sec-title reveal"><span class="emoji">🔕</span> קולר נגד נביחות <span class="bar"></span></h2>
+
+    <div class="card reveal">
+      <h3>⚠️ מה חשוב לדעת</h3>
+      <ul>
+        <li>שמים אותו <span class="pill">רק בבית</span> - לא יוצאים איתו לטיולים או החוצה.</li>
+        <li><span class="pill">לא יותר מ-10 שעות</span> ביום - כדי לא לגרום לפצעי לחץ.</li>
+        <li>צמוד אבל לא לוחץ - <span class="pill">שתי אצבעות</span> נכנסות בין הרצועה לצוואר.</li>
+        <li>לבדוק את העור מתחת לקולר. אם יש אודם או פצע - להוריד ולא לשים עד שזה עובר.</li>
+        <li>אם הוא נראה במצוקה - להוריד ולהתקשר למאלף.</li>
+        <li>לא לשנות את ההגדרות של הקולר.</li>
+      </ul>
+    </div>
+
+    <div class="card reveal">
+      <h3>📖 איך מפעילים ושמים</h3>
+      <p>כל ההוראות הטכניות (הדלקה, טעינה, התאמה לצוואר) נמצאות כאן:</p>
+      <ul>
+        <li><a class="maplink" href="https://files.instinct.com/vpcfxg9vuc7g-bp-504?via=wa" target="_blank" rel="noopener">📖 המדריך המלא בעברית</a></li>
+        <li><a class="maplink" href="https://www.youtube.com/watch?v=1cl3V8vYobM" target="_blank" rel="noopener">▶️ סרטון: איך להתאים את הקולר לצוואר</a></li>
+        <li><a class="maplink" href="https://www.youtube.com/watch?v=LXTctvZsxC8" target="_blank" rel="noopener">▶️ סרטון: הקולר BP-504</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EXIT -->
+  <section id="exit">
+    <h2 class="sec-title reveal"><span class="emoji">👋</span> לפני שיוצאים <span class="bar"></span></h2>
+    <div class="exit reveal">
+      <h3>משאירים את מוקי לבד?</h3>
+      <ul style="list-style:none">
+        <li class="task"><input type="checkbox" id="ex1"><label for="ex1">להשאיר למוקי מאוורר או מזגן על המתוק 🐶❄️</label></li>
+        <li class="task"><input type="checkbox" id="ex2"><label for="ex2">לוודא שיש לו מים 💧</label></li>
+        <li class="task"><input type="checkbox" id="ex3"><label for="ex3">שאין שום דבר אכיל על הרצפה 🧹</label></li>
+        <li class="task"><input type="checkbox" id="ex4"><label for="ex4">קונג עם אוכל או משטח ליקוק 🦴</label></li>
+        <li class="task"><input type="checkbox" id="ex5"><label for="ex5">לשים קולר נביחות 🔕</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="thanks reveal">תודה ענקית!! 🐾💛🌈</div>
+    <p class="sig reveal">- החברים ומוקי מודים לכם 🐕</p>
+  </footer>
+
+</div>
+
+<div id="toast">הועתק! 📋</div>
+
+<script>
+  // ---- sitter name (set in <meta name="sitter-names"> at top of file) ----
+  const sn=(document.querySelector('meta[name=sitter-names]')||{}).content||'';
+  if(sn.trim()) document.getElementById('greeting').textContent='היי '+sn.trim()+'! כל מה שצריך לדעת 💛';
+  const sp=(document.querySelector('meta[name=sitter-poster]')||{}).content||'';
+  if(sp.trim()){
+    const pf=document.getElementById('poster'), pi=pf.querySelector('img');
+    pi.src=sp.trim(); pi.alt='פוסטר תודה'+(sn.trim()?' ל'+sn.trim():'');
+    pf.hidden=false;
+  }
+
+  // ---- persist checkboxes ----
+  document.querySelectorAll('input[type=checkbox]').forEach(cb=>{
+    const k='mookie_'+cb.id;
+    if(localStorage.getItem(k)==='1') cb.checked=true;
+    cb.addEventListener('change',()=>localStorage.setItem(k, cb.checked?'1':'0'));
+  });
+
+  // ---- accordion ----
+  document.querySelectorAll('.day').forEach(d=>{
+    d.querySelector('.day-head').addEventListener('click',()=>d.classList.toggle('open'));
+  });
+
+  // ---- toast ----
+  const toast=document.getElementById('toast');
+
+  // ---- reveal on scroll ----
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el);});
+</script>
+</body>
+</html>
