@@ -24,7 +24,7 @@
     <span class="hero-eyebrow">מדריך הבית 🏠</span>
     <h1>ברוכים הבאים</h1>
     <p class="sub" id="greeting">כל מה שצריך כדי להרגיש בבית 💛</p>
-    <div class="paw-row">🔑 ☕ 🛋️</div>
+    <div class="paw-row">🔑 🏄 🛋️</div>
   </header>
 
   <!-- QUICK BAR -->
@@ -32,7 +32,7 @@
     <a href="#secrets">🔒 וויפי ומפתחות</a>
     <a href="#in">🚪 כניסה</a>
     <a href="#house">🏠 הבית</a>
-    <a href="#exit">👋 לפני שיוצאים</a>
+    <a href="#exit">👋 לפני שעוזבים</a>
   </nav>
 
   <!-- SECRETS (filled by shared/secrets.js from secrets.enc) -->
@@ -49,13 +49,12 @@
   <!-- GETTING IN -->
   <section id="in">
     <h2 class="sec-title reveal"><span class="emoji">🚪</span> איך נכנסים <span class="bar"></span></h2>
-    <div class="card reveal todo">
-      <h3>📍 הגעה</h3>
-      <p>[למלא: איך מגיעים לבניין, קומה, איזו דלת. בלי כתובת מלאה - היא נשלחת בהודעה.]</p>
-    </div>
-    <div class="card reveal todo">
-      <h3>🔑 מפתחות ודלת</h3>
-      <p>[למלא: איך פותחים ונועלים, טריקים של המנעול. איפה המפתח - בתמונה הסודית למעלה.]</p>
+    <div class="card reveal">
+      <h3>📍 כתובת ומפתח</h3>
+      <ul>
+        <li>הכתובת המלאה (קומה ודירה) - בפרטים הסודיים למעלה 🔒</li>
+        <li>🔑 פרטים על המפתח - בהודעה פרטית.</li>
+      </ul>
     </div>
   </section>
 
@@ -63,25 +62,20 @@
   <section id="house">
     <h2 class="sec-title reveal"><span class="emoji">🏠</span> הבית <span class="bar"></span></h2>
     <div class="twocol">
-      <div class="mini reveal todo"><h4>❄️ מזגן</h4><p>[למלא]</p></div>
-      <div class="mini reveal todo"><h4>🚿 מקלחת ודוד</h4><p>[למלא]</p></div>
-      <div class="mini reveal todo"><h4>☕ מטבח וקפה</h4><p>[למלא]</p></div>
-      <div class="mini reveal todo"><h4>🗑️ זבל ומיחזור</h4><p>[למלא]</p></div>
-      <div class="mini reveal todo"><h4>🛏️ מצעים ומגבות</h4><p>[למלא]</p></div>
-      <div class="mini reveal todo"><h4>📺 טלוויזיה</h4><p>[למלא]</p></div>
+      <div class="mini reveal"><h4>❄️ מזגן</h4><p>אחד לכל הדירה. קר בטירוף - יקפיא אתכם יפה.</p></div>
+      <div class="mini reveal"><h4>♨️ דוד</h4><p>פעיל <span class="pill">24/7</span>.</p></div>
+      <div class="mini reveal"><h4>📺 טלוויזיה</h4><p>חכמה, עם מלא שיט לראות.</p></div>
+      <div class="mini reveal"><h4>🧳 מה להביא?</h4><p>רק בגדים! כל השאר כאן, מגבות עמייאת.</p></div>
+      <div class="mini reveal"><h4>🏄 אקסטרות</h4><p>יש גלשן אם בא לכם. תשתמשו בכל אוכל/שיט שאתם רואים, בבקשה.</p></div>
+      <div class="mini reveal"><h4>🤖 ניקיון</h4><p>יש רובוט - לוחצים על כפתור הפליי <span class="pill">פעמיים</span> והוא מתחיל.</p></div>
     </div>
-    <div class="card reveal todo" style="margin-top:16px">
-      <h3>🙏 כמה בקשות קטנות</h3>
-      <ul><li>[למלא: חוקי הבית]</li></ul>
+    <div class="card reveal" style="margin-top:16px">
+      <h3>🪴 עציצים</h3>
+      <p>השקיה טובה לעציצים בחוץ <span class="pill">פעם ביום</span> אם מצליחים. הפנימיים מסודרים.</p>
     </div>
-  </section>
-
-  <!-- AROUND -->
-  <section id="around">
-    <h2 class="sec-title reveal"><span class="emoji">🗺️</span> מסביב <span class="bar"></span></h2>
-    <div class="card reveal todo">
-      <h3>⭐ המלצות בשכונה</h3>
-      <ul><li>[למלא: סופר, קפה, אוכל, ים/פארק]</li></ul>
+    <div class="card reveal">
+      <h3>💛 בקיצור</h3>
+      <p>מרגישים בבית. שזה הבית שלכם.</p>
     </div>
   </section>
 
@@ -95,13 +89,12 @@
 
   <!-- EXIT -->
   <section id="exit">
-    <h2 class="sec-title reveal"><span class="emoji">👋</span> לפני שיוצאים <span class="bar"></span></h2>
+    <h2 class="sec-title reveal"><span class="emoji">👋</span> לפני שעוזבים <span class="bar"></span></h2>
     <div class="exit reveal">
-      <h3>יוצאים מהבית?</h3>
+      <h3>הוראות יציאה</h3>
       <ul style="list-style:none">
-        <li class="task"><input type="checkbox" id="ex1"><label for="ex1">מזגן ואורות כבויים 💡</label></li>
-        <li class="task"><input type="checkbox" id="ex2"><label for="ex2">חלונות סגורים 🪟</label></li>
-        <li class="task"><input type="checkbox" id="ex3"><label for="ex3">נעלתם את הדלת 🔑</label></li>
+        <li class="task"><input type="checkbox" id="ex3"><label for="ex3">לנעול את הדלת 🔒</label></li>
+        <li class="task"><input type="checkbox" id="ex4"><label for="ex4">להשאיר את המפתח באותו מקום 🔑</label></li>
       </ul>
     </div>
   </section>
