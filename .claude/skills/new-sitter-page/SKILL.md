@@ -19,16 +19,28 @@ Ask only for what is missing:
 
 ## 2. Create the page
 
-`index.html` is the generic page. Each sitter page is an exact copy with one changed
-value — the `sitter-names` meta tag. Never edit sitter pages by hand; edit `index.html`
-and regenerate them all.
+`index.html` is the generic page. Each sitter page is an exact copy with up to two changed
+values in the `<head>`: the `sitter-names` meta tag, and the `sitter-poster` meta tag once
+the sitter has a poster. Never edit sitter pages by hand; edit `index.html` and regenerate
+them all.
 
 ```bash
-sed 's|<meta name="sitter-names" content="">|<meta name="sitter-names" content="NAMES">|' index.html > SLUG.html
+sed -e 's|<meta name="sitter-names" content="">|<meta name="sitter-names" content="NAMES">|' \
+    -e 's|<meta name="sitter-poster" content="">|<meta name="sitter-poster" content="assets/SLUG-poster.jpg">|' \
+    index.html > SLUG.html
 ```
 
-`SLUG` is a lowercase Latin transliteration, words joined by `-` (`noa-yuval`).
-Check with `diff index.html SLUG.html` — only line 11 may differ.
+Leave out the second `-e` until the poster exists. `SLUG` is a lowercase Latin
+transliteration, words joined by `-` (`noa-yuval`). Check with `diff index.html SLUG.html`:
+only those meta lines may differ. When regenerating every page after an `index.html` change,
+keep each sitter's existing poster value.
+
+### Adding the finished poster
+
+When the user sends the poster Gemini made, strip its metadata (re-encode the pixels), save it
+as `assets/SLUG-poster.jpg`, set `sitter-poster` on that sitter's page, and push. The page
+shows it as the taped card under the greeting. Then poll the page and the image URL on
+`https://yonatan-ilani.github.io/mookie-guide/` until both return 200.
 
 ## 3. Write the Gemini prompt
 

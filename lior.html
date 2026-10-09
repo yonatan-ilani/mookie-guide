@@ -9,6 +9,8 @@
   EDIT ONE VALUE PER SITTER: change content="" below. Empty = generic greeting.
 ============================================================ -->
 <meta name="sitter-names" content="ליאור">
+<!-- Optional thank-you poster for this sitter, e.g. "assets/lior-poster.jpg". Empty = no poster. -->
+<meta name="sitter-poster" content="assets/lior-poster.jpg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>מוקי 🐾 מדריך השמרטפים</title>
@@ -232,6 +234,11 @@
     <h1>מוקי</h1>
     <p class="sub" id="greeting">כל מה שצריך לדעת 💛</p>
     <div class="paw-row">🐾 🦴 🐾</div>
+    <div class="card-frame" id="poster" hidden>
+      <span class="tape"></span>
+      <img alt="">
+      <span class="tape two"></span>
+    </div>
   </header>
 
   <!-- QUICK BAR -->
@@ -427,6 +434,12 @@
   // ---- sitter name (set in <meta name="sitter-names"> at top of file) ----
   const sn=(document.querySelector('meta[name=sitter-names]')||{}).content||'';
   if(sn.trim()) document.getElementById('greeting').textContent='היי '+sn.trim()+'! כל מה שצריך לדעת 💛';
+  const sp=(document.querySelector('meta[name=sitter-poster]')||{}).content||'';
+  if(sp.trim()){
+    const pf=document.getElementById('poster'), pi=pf.querySelector('img');
+    pi.src=sp.trim(); pi.alt='פוסטר תודה'+(sn.trim()?' ל'+sn.trim():'');
+    pf.hidden=false;
+  }
 
   // ---- persist checkboxes ----
   document.querySelectorAll('input[type=checkbox]').forEach(cb=>{
