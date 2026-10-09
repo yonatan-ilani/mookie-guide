@@ -32,27 +32,41 @@ Check with `diff index.html SLUG.html` — only line 11 may differ.
 
 ## 3. Write the Gemini prompt
 
-Fill this template in English (image models follow English better) and give it to the
-user. Mookie's look comes from a photo of him that the user attaches in Gemini; the rest comes from step 1. Do not invent
-details about the sitter's looks — if none were given, describe them only by name and
-role and suggest the user attach a photo of them to Gemini.
+The picture is a **thank-you poster** in a fixed style: the first one was made for the hosts
+Max & Nery. The user keeps that poster and attaches it to Gemini as the layout template — it
+is not in this repo. The prompt asks Gemini to recreate it for the new sitter.
+
+Tell the user to attach, in this order:
+1. The original Max & Nery poster (template).
+2. A photo of each sitter.
+3. Optional: a Google Street View screenshot of the sitter's building, so Gemini doesn't
+   invent one.
+
+Do not invent details about the sitters' looks or identity. Drop the pride flag and the
+"GAY-FRIENDLY & WELCOMING HOUSE!" sign unless the user says they fit the new sitters.
 
 ```text
-A funny, warm, cartoon-style illustration of Mookie, the dog in the attached photo,
-staying with his dog-sitter{s} {NAMES} at their home in {NEIGHBORHOOD, CITY}.
-Setting: {THEIR HOME — e.g. a small Tel Aviv apartment with a sunny balcony and plants}.
-Scene: Mookie has taken over the place like he owns it — sprawled across their couch
-on his own bed, a red Kong toy in his mouth and a green lick mat nearby, while
-{NAMES} {FUNNY ACTION fitting them — e.g. try to work from the floor because the couch
-is taken}. Mookie looks proud and very pleased with himself.
-{OPTIONAL LOCAL DETAIL — e.g. a view of the sea through the window, a beach towel with
-paw prints drying on the balcony}.
-Bright, cheerful colors, thick black outlines, sticker-like style, playful mood.
-Text at the top in Hebrew: "מוקי אצל {NAMES}".
-Keep Mookie looking like the attached photo of him.
-{If the user also attaches photos of the sitters: "Base the people on the attached photo(s)."}
+Recreate the attached poster (image 1) as a new version for a different dog-sitter.
+Keep exactly the same layout, cartoon style, colors and composition:
+- Big rainbow-striped bubble-letter title at the top.
+- Round photo bubble(s) of the sitter(s) at the top, with a ribbon banner "YOU'RE OUR SUPERSTAR{S}!".
+- The same heart in the middle with the same real puppy photo of Mookie inside it,
+  with "THANK YOU FOR KEEPING MOOKIE!" around the heart.
+- Floating dog toys, bones and balls around.
+- A cartoon of the sitter's building at the bottom, with trees, potted plants,
+  and the cartoon golden puppy happily running by the entrance.
+- Bottom ribbon: "YOUR FRIENDS AND MOOKIE THANK YOU!"
+
+Changes:
+- Title: "{NAMES IN ENGLISH, e.g. LIOR!}" instead of "MAX & NERY!".
+- People: use only the person/people in the attached sitter photo(s) {image 2[, 3]};
+  remove both people from the original poster.
+- The building is {NAMES}'s home in {CITY}
+  (base it on the attached building photo if there is one; otherwise {SHORT DESCRIPTION,
+  e.g. a typical white Tel Aviv Bauhaus-style apartment building with balconies}).
+- Replace the rainbow flag and the "GAY-FRIENDLY & WELCOMING HOUSE!" sign with a sign
+  that says "MOOKIE'S VACATION HOME!", and change the house number to {NUMBER}.
 ```
 
-Tell the user to attach a photo of Mookie (required) and of the sitters (optional, only
-if they agree). Gemini often garbles Hebrew text in images — if it does,
-drop the text line and add the caption afterwards.
+If Gemini garbles text, tell the user to ask it to fix only that line instead of
+regenerating the whole poster.
