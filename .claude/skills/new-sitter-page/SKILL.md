@@ -41,11 +41,29 @@ recreate it for the new sitter.
 Put the poster URL in the prompt. If Gemini's result doesn't follow the layout (it may not
 open the link), tell the user to download the poster from that URL and attach it instead.
 
-Tell the user to attach:
-1. Only if the link didn't work: the poster itself (template).
-2. A photo of each sitter.
-3. Optional: a Google Street View screenshot of the sitter's building, so Gemini doesn't
-   invent one.
+### Sitter photos go up as public links too
+
+Gemini works best when every image is a link in the prompt. For each sitter photo the user
+gives you:
+
+1. Confirm once that the sitter agreed to a public photo. The repo and its GitHub Pages
+   site are public, and the photo stays in git history even if it's deleted later.
+2. Crop black screenshot bars, strip all metadata (EXIF/GPS) by re-encoding the pixels, and
+   save it as `assets/<slug>.jpg` (for two sitters: `assets/<slug>-<name>.jpg`). The
+   user's upload path is under `~/.claude/uploads/`.
+3. Commit, push to `main`, then poll
+   `https://yonatan-ilani.github.io/mookie-guide/assets/<file>.jpg` until it returns 200
+   (Pages takes about a minute). Do not give the user the prompt until every link returns 200.
+4. Put each sitter's photo link in the prompt, right after the poster link:
+   `The new sitter is {NAME} — this is his/her photo: {URL}`.
+
+If you can't publish the photo (a permission or safety check refuses it), do not work around
+it. Give the user the upload steps instead: open
+`https://github.com/yonatan-ilani/mookie-guide/upload/main/assets`, drag in the photo named
+exactly `<file>.jpg`, commit. Then poll the link as in step 3 and confirm it opens.
+
+Optional for the user: attach a Google Street View screenshot of the building, so Gemini
+doesn't invent one.
 
 Do not invent details about the sitters' looks or identity. Drop the pride flag and the
 "GAY-FRIENDLY & WELCOMING HOUSE!" sign unless the user says they fit the new sitters.
