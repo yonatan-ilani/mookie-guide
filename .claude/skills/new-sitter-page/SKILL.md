@@ -84,7 +84,7 @@ Keep exactly the same layout, cartoon style, colors and composition:
 
 Changes:
 - Title: "{NAMES IN ENGLISH, e.g. LIOR!}" instead of "MAX & NERY!".
-- People: use only the person/people in the attached sitter photo(s);
+- People: use only the person/people in the sitter photo(s) linked above;
   remove both people from the original poster.
 - The building is {NAMES}'s home at {STREET ADDRESS, CITY}. If a Street View screenshot
   of the building is attached, base the building on it (same shape, number of floors,
