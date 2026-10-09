@@ -68,12 +68,18 @@ Changes:
 - Title: "{NAMES IN ENGLISH, e.g. LIOR!}" instead of "MAX & NERY!".
 - People: use only the person/people in the attached sitter photo(s);
   remove both people from the original poster.
-- The building is {NAMES}'s home in {CITY}
-  (base it on the attached building photo if there is one; otherwise {SHORT DESCRIPTION,
-  e.g. a typical white Tel Aviv Bauhaus-style apartment building with balconies}).
+- The building is {NAMES}'s home at {STREET ADDRESS, CITY}. If a Street View screenshot
+  of the building is attached, base the building on it (same shape, number of floors,
+  balconies, colors and entrance). Otherwise, before drawing, use Google Maps to look up
+  this address and base the building on what is really there. If you can't see the real
+  building, draw {SHORT DESCRIPTION, e.g. a typical white Tel Aviv Bauhaus-style apartment
+  building with balconies and shutters}, and tell me you couldn't find it.
 - Replace the rainbow flag and the "GAY-FRIENDLY & WELCOMING HOUSE!" sign with a sign
   that says "MOOKIE'S VACATION HOME!", and change the house number to {NUMBER}.
 ```
+
+Gemini usually can't see Street View itself; if it says it couldn't find the building,
+tell the user to attach a Street View screenshot instead.
 
 If Gemini garbles text, tell the user to ask it to fix only that line instead of
 regenerating the whole poster.
