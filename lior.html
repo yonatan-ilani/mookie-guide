@@ -208,20 +208,6 @@
   .exit .task input:checked{background:#fff}
   .exit .task input:checked::after{color:var(--green)}
 
-  /* collapsible block */
-  details.more{margin-bottom:16px}
-  details.more summary{
-    list-style:none;cursor:pointer;font-family:'Varela Round';font-size:1.1rem;
-    background:var(--yellow);border:4px solid var(--ink);border-radius:16px;
-    padding:14px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:8px
-  }
-  details.more summary::-webkit-details-marker{display:none}
-  details.more summary::after{content:"▾";margin-right:auto;transition:transform .25s}
-  details.more[open] summary::after{transform:rotate(180deg)}
-  details.more summary .hint{font-size:.85rem;opacity:.7}
-  details.more[open] summary .hint{display:none}
-  details.more[open] summary{margin-bottom:16px}
-
   footer{text-align:center;margin-top:54px}
   .thanks{font-family:'Suez One';font-size:1.6rem;color:var(--ink);
     background:var(--yellow);display:inline-block;padding:10px 24px;border:4px solid var(--ink);
@@ -382,68 +368,26 @@
     <h2 class="sec-title reveal"><span class="emoji">🔕</span> קולר נגד נביחות <span class="bar"></span></h2>
 
     <div class="card reveal">
-      <h3>⚠️ הכי חשוב</h3>
+      <h3>⚠️ מה חשוב לדעת</h3>
       <ul>
         <li>שמים אותו <span class="pill">רק בבית</span> - לא יוצאים איתו לטיולים או החוצה.</li>
         <li><span class="pill">לא יותר מ-10 שעות</span> ביום - כדי לא לגרום לפצעי לחץ.</li>
-        <li>לבדוק את העור מתחת לנקודות המגע בכל פעם. אם יש אודם, נפיחות או פצע - להוריד ולא לשים עד שזה עובר.</li>
-        <li>אם הוא מייבב או נראה במצוקה - להוריד ולהתקשר למאלף.</li>
+        <li>צמוד אבל לא לוחץ - <span class="pill">שתי אצבעות</span> נכנסות בין הרצועה לצוואר.</li>
+        <li>לבדוק את העור מתחת לקולר. אם יש אודם או פצע - להוריד ולא לשים עד שזה עובר.</li>
+        <li>אם הוא נראה במצוקה - להוריד ולהתקשר למאלף.</li>
+        <li>לא לשנות את ההגדרות של הקולר.</li>
       </ul>
     </div>
 
-    <details class="more reveal" id="collar-more">
-      <summary>📖 כל ההוראות לקולר <span class="hint">(לחצו לפתיחה)</span></summary>
-
-      <div class="card">
-        <h3>🔘 הדלקה וכיבוי</h3>
-        <ul>
-          <li>הדלקה: לחיצה קצרה (רבע שנייה) - צפצוף ומופיע מונה נביחות.</li>
-          <li>כיבוי: להחזיק <span class="pill">5 שניות</span> עד צפצוף.</li>
-          <li>מסך כבוי לא אומר שהקולר כבוי - הוא נרדם אבל עדיין מזהה נביחות.</li>
-          <li>לא לשנות את ההגדרות של הקולר.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>🔋 טעינה וסוללה</h3>
-        <ul>
-          <li>נורה ירוקה = סוללה טעונה · כתומה = לטעון בתוך יום · אדומה = סוללה חלשה.</li>
-          <li>טוענים רק עם המטען שלו. השקע מתחת למכסה הגומי.</li>
-          <li>טעינה מלאה לוקחת <span class="pill">כשעתיים</span>: אדום בזמן טעינה, ירוק כשמוכן.</li>
-          <li>לא לתת לסוללה להתרוקן לגמרי, ולא להשאיר בחום או בקור קיצוניים.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>🐶 איך שמים</h3>
-        <ul>
-          <li>היחידה בצד הצוואר, ליד קנה הנשימה ולא ממש עליו.</li>
-          <li>שתי נקודות המגע צריכות לגעת בעור.</li>
-          <li>צמוד אבל לא לוחץ - <span class="pill">שתי אצבעות</span> נכנסות בין הרצועה לצוואר.</li>
-          <li>לא להדק יותר כדי "שיעבוד טוב יותר".</li>
-          <li>להזיז קצת את המיקום כל יום, כדי שלא ילחץ על אותה נקודה.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>🛑 מתי להוריד מיד</h3>
-        <ul>
-          <li>אודם, נפיחות, פצע או נשירת שיער מתחת לנקודות המגע - להוריד ולא לשים עד שזה מחלים.</li>
-          <li>שיעול, השתנקות, צפצופים או קושי בנשימה - להוריד ולהתקשר לווטרינר.</li>
-          <li>מייבב או נראה במצוקה - להוריד ולהתקשר למאלף.</li>
-          <li>בזמן משחק עם כלבים או חיבוקים - להוריד, כדי שלא ילחץ וישפשף.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>🎬 סרטונים ומדריך</h3>
-        <ul>
-          <li><a class="maplink" href="https://www.youtube.com/watch?v=LXTctvZsxC8" target="_blank" rel="noopener">▶️ סרטון: הקולר BP-504 (יוטיוב, באנגלית)</a></li>
-          <li><a class="maplink" href="https://www.youtube.com/watch?v=1cl3V8vYobM" target="_blank" rel="noopener">▶️ סרטון: איך להתאים את הקולר לצוואר (יוטיוב, באנגלית)</a></li>
-          <li><a class="maplink" href="https://files.instinct.com/vpcfxg9vuc7g-bp-504?via=wa" target="_blank" rel="noopener">📖 המדריך המלא בעברית</a></li>
-        </ul>
-      </div>
-    </details>
+    <div class="card reveal">
+      <h3>📖 איך מפעילים ושמים</h3>
+      <p>כל ההוראות הטכניות (הדלקה, טעינה, התאמה לצוואר) נמצאות כאן:</p>
+      <ul>
+        <li><a class="maplink" href="https://files.instinct.com/vpcfxg9vuc7g-bp-504?via=wa" target="_blank" rel="noopener">📖 המדריך המלא בעברית</a></li>
+        <li><a class="maplink" href="https://www.youtube.com/watch?v=1cl3V8vYobM" target="_blank" rel="noopener">▶️ סרטון: איך להתאים את הקולר לצוואר</a></li>
+        <li><a class="maplink" href="https://www.youtube.com/watch?v=LXTctvZsxC8" target="_blank" rel="noopener">▶️ סרטון: הקולר BP-504</a></li>
+      </ul>
+    </div>
   </section>
 
   <!-- EXIT -->
@@ -492,10 +436,6 @@
   document.querySelectorAll('.day').forEach(d=>{
     d.querySelector('.day-head').addEventListener('click',()=>d.classList.toggle('open'));
   });
-
-  // ---- open the collar details when arriving via #collar ----
-  const openCollar=()=>{if(location.hash==='#collar') document.getElementById('collar-more').open=true;};
-  openCollar(); window.addEventListener('hashchange',openCollar);
 
   // ---- toast ----
   const toast=document.getElementById('toast');
